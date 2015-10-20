@@ -3,11 +3,8 @@ package presentation;
 import aplication.ActivityController;
 import model.Activity;
 
-import javax.management.Attribute;
 import java.io.FileNotFoundException;
 import java.util.*;
-import java.util.List;
-import java.util.Enumeration;
 
 
 /**
@@ -19,10 +16,11 @@ public class MainUI {
 
         System.out.println("ESINF - Part One");
         String path = "C:\\Users\\bruno.devesa\\IdeaProjects\\ESINF_Projects\\ESINF_PartOne\\src\\tests\\import-test";
+        String pathMac= "/Users/brunodevesa/IdeaProjects/ESINF_Projects/ESINF_PartOne/src/tests/import-test";
         //String path =  Console.readLine("enter the path:");
-        ActivityController activityController = new ActivityController(path);
+        ActivityController activityController = new ActivityController(pathMac);
 
-        ArrayList<ArrayList<String>> data = activityController.ImportData(path);
+        ArrayList<ArrayList<String>> data = activityController.ImportData(pathMac);
 
         printData(data);
 
