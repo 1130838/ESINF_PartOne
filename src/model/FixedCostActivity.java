@@ -15,6 +15,9 @@ public class FixedCostActivity extends Activity {
     }
 
 
+    public String toString(){
+        return super.toString()+"Cost: " + cost + "\n";
+    }
 
 
 }

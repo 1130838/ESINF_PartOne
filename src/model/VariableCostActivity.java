@@ -18,5 +18,9 @@ public class VariableCostActivity extends Activity{
         this.total_time=total_time;
     }
 
+    public String toString(){
+        return super.toString()+"Cost/Time: " + cost_time + "\n" + "Total Time :" + total_time + "\n";
+    }
+
 
 }

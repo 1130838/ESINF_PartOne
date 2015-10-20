@@ -73,9 +73,6 @@ public class ActivityRecord {
         for (int i = 0; i < dataFromFile.size(); i++) {
             newActivity(dataFromFile.get(i));
 
-           /* for (int j = 0; j < dataFromFile.get(i).size(); j++) {
-            activityList.add(dataFromFile.get(i).get((j)));
-            }*/
         }
 
         return activityList;

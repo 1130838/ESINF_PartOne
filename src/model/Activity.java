@@ -35,4 +35,16 @@ public class Activity {
         return type;
     }
 
+
+    public String toString(){
+
+        return "Type: " + type +  "\n" +
+                "Description : " + description +  "\n" +
+                "Duration : " + duration +  "\n" +
+                "Time Unit: " + time_unit +  "\n" +
+                "Preceding activities: " + preceding_activities + "\n" ;
+
+    }
+
+
 }

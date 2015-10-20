@@ -16,7 +16,7 @@ public class MainUI {
 
         System.out.println("ESINF - Part One");
         String path = "C:\\Users\\bruno.devesa\\IdeaProjects\\ESINF_Projects\\ESINF_PartOne\\src\\tests\\import-test";
-        String pathMac= "/Users/brunodevesa/IdeaProjects/ESINF_Projects/ESINF_PartOne/src/tests/import-test";
+        String pathMac = "/Users/brunodevesa/IdeaProjects/ESINF_Projects/ESINF_PartOne/src/tests/import-test";
         //String path =  Console.readLine("enter the path:");
         ActivityController activityController = new ActivityController(pathMac);
 
@@ -26,7 +26,7 @@ public class MainUI {
 
         HashMap<String, Activity> hashMap = activityController.getMap();
 
-       // HashMap<String, Activity> hashMap = activityController.getMap();
+        // HashMap<String, Activity> hashMap = activityController.getMap();
 
         printMap(hashMap);
 
@@ -49,15 +49,15 @@ public class MainUI {
         /* Display content using Iterator*/
         Set set = hashMap.entrySet();
         Iterator iterator = set.iterator();
-        while(iterator.hasNext()) {
-            Map.Entry mentry = (Map.Entry)iterator.next();
-            System.out.print("key is: "+ mentry.getKey() + " & Value is: ");
+        while (iterator.hasNext()) {
+            Map.Entry mentry = (Map.Entry) iterator.next();
+            System.out.print("key is: " + mentry.getKey() + " Activity Data: \n");
             System.out.println(mentry.getValue());
         }
 
       /* Get values based on key*/
-        String var= (String) hashMap.get(1);
-        System.out.println("Value at index 2 is: "+var);
+        /*String var = hashMap.get(1).toString();
+        System.out.println("Value at index 2 is: " + var);*/
 
     }
 }
