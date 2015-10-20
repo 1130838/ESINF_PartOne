@@ -1,0 +1,3 @@
+B,FCA,Order Hardware platform,4,week,2500,actkeyprev1,actkeyprev2
+Z,FCA,Order Software platform,5,week,500,actkeyprev0,actkeyprev1
+A,VCA,High level analysis,1,week,30,112,actkeyprev3,actkeyprev4
