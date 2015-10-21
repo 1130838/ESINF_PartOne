@@ -12,9 +12,7 @@ import java.util.Scanner;
 public class FileImport {
 
     static Scanner file;
-    static String[] temp;
     static final String EXTENSION = ".txt";
-
 
     public static ArrayList<ArrayList<String>> importDataFromFile (String filename) throws FileNotFoundException {
 

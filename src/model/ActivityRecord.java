@@ -1,26 +1,33 @@
 package model;
 
+import utils.FileImport;
+
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 
 /**
  * Created by bruno.devesa on 20/10/2015.
  */
 public class ActivityRecord {
 
-    private final HashMap<String, Activity> map;
+    private final LinkedHashMap<String, Activity> map;
 
     public ActivityRecord() {
-        this.map = new HashMap<>();
+        this.map = new LinkedHashMap<>();
     }
 
-    public HashMap getMap(){
+    public LinkedHashMap getMap(){
         return this.map;
     }
 
+    public Activity getActivityByKey(String key) {
+        return this.map.get(key);
+    }
 
     public Activity addActivity(Activity activity) {
-        return this.map.put(activity.getKey(), activity);
+        return this.map.put(activity. getKey(), activity);
     }
 
     public void newActivity(ArrayList<String> activity) {
@@ -33,7 +40,6 @@ public class ActivityRecord {
             for (int i = 6; i < activity.size(); i++) {
                 precedingActivities.add(activity.get(i));
             }
-
 
             FixedCostActivity newActivity = new FixedCostActivity(
                    activity.get(0),
@@ -68,14 +74,18 @@ public class ActivityRecord {
     }
 
 
-    public ArrayList<String> splitActivities (ArrayList<ArrayList<String>> dataFromFile){
-        ArrayList<String> activityList = new ArrayList<>();
-        for (int i = 0; i < dataFromFile.size(); i++) {
-            newActivity(dataFromFile.get(i));
+    public void CreateActivitiesFromFileData(String path){
 
+        try {
+
+            ArrayList<ArrayList<String>> dataFromFile = FileImport.importDataFromFile(path);
+            for (int i = 0; i < dataFromFile.size(); i++) {
+                newActivity(dataFromFile.get(i));
+            }
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
         }
-
-        return activityList;
     }
 
 

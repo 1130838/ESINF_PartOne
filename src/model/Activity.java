@@ -5,11 +5,9 @@ import java.util.List;
 /**
  * Created by bruno.devesa on 19/10/2015.
  */
-public class Activity {
+public abstract class Activity {
 
     private String key;
-
-
 
     private ActivityType type;
     private String description;
