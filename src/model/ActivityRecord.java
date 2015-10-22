@@ -4,7 +4,6 @@ import utils.FileImport;
 
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.LinkedHashMap;
 
 /**
@@ -14,22 +13,44 @@ public class ActivityRecord {
 
     private final LinkedHashMap<String, Activity> map;
 
+    /**
+     * Constructor inicializing the LinkedHashMap data structure
+     */
     public ActivityRecord() {
         this.map = new LinkedHashMap<>();
     }
 
+    /**
+     * Returns the LinkedHashMap
+     * @return LinkedHashMap
+     */
     public LinkedHashMap getMap(){
         return this.map;
     }
 
+    /**
+     * Return the activity from the LinkedHashMAp from the Activity key
+     * @param key key
+     * @return Activity
+     */
     public Activity getActivityByKey(String key) {
         return this.map.get(key);
     }
 
+    /**
+     * Add and Activity instance into the LinkedHashMap
+     * @param activity activity
+     * @return Activity
+     */
     public Activity addActivity(Activity activity) {
         return this.map.put(activity. getKey(), activity);
     }
 
+    /**
+     * Create new FixedCostActivity or VariableCostActivity depending of the index(1) content from the activity ArrayList.
+     * After succeed, adds the new activity into the LinkedHashMap data structure
+     * @param activity activity
+     */
     public void newActivity(ArrayList<String> activity) {
 
         // update to Strategy pattern
@@ -73,15 +94,17 @@ public class ActivityRecord {
         }
     }
 
-
+    /**
+     * Create the activity from the imported file.
+     * @param path path
+     * @throws FileNotFoundException
+     */
     public void CreateActivitiesFromFileData(String path) throws FileNotFoundException{
 
             ArrayList<ArrayList<String>> dataFromFile = FileImport.importDataFromFile(path);
             for (int i = 0; i < dataFromFile.size(); i++) {
                 newActivity(dataFromFile.get(i));
             }
-
     }
-
 
 }

@@ -14,6 +14,12 @@ public class FileImport {
     static Scanner file;
     static final String EXTENSION = ".txt";
 
+    /**
+     * Return a matrix of Strings from the file
+     * @param filename filename
+     * @return matrix of Strings
+     * @throws FileNotFoundException
+     */
     public static ArrayList<ArrayList<String>> importDataFromFile (String filename) throws FileNotFoundException {
 
         file = new Scanner(new File(filename + EXTENSION));
@@ -22,17 +28,16 @@ public class FileImport {
 
         while ((file.hasNext())) {
 
-            ArrayList line_data = new ArrayList<>();// create new ArrayList to save line
-            data.add(line_data);//add new line in matrix
-
-            String currentLine = file.nextLine();    // save current line from file
-
+            ArrayList line_data = new ArrayList<>();
+            data.add(line_data);
+            String currentLine = file.nextLine();
             String[] parts = currentLine.split(",");
 
             for (int j = 0; j < parts.length; j++) {
                 line_data.add(parts[j]);
             }
         }
+
         file.close();
 
         return data;

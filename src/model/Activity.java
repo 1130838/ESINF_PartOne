@@ -15,6 +15,15 @@ public abstract class Activity {
     private TimeUnit time_unit;
     private List<String> preceding_activities;
 
+    /**
+     * Constructor os Activity Class
+     * @param key key
+     * @param type  type
+     * @param description description
+     * @param duration duration
+     * @param time_unit time_unit
+     * @param preceding_activities preceding_activities
+     */
     public Activity(String key, ActivityType type, String description, float duration, TimeUnit time_unit, List<String> preceding_activities) {
         this.key = key;
         this.type = type;
@@ -24,10 +33,18 @@ public abstract class Activity {
         this.preceding_activities = preceding_activities;
     }
 
+    /**
+     * Get the key atribute
+     * @return key
+     */
     public String getKey() {
         return key;
     }
 
+    /**
+     * toString method
+     * @return instance content
+     */
     public String toString(){
 
         return "Type: " + type +  "\n" +
