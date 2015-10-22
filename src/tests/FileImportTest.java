@@ -22,6 +22,11 @@ public class FileImportTest {
     }
 
     @org.junit.Test
+    /**
+     * Test pretends to validate the success of importing a file.
+     * Test developed creating a valid data structure with a content equal to the imported file.
+     * The content of the created structure and its size should be the same as the returned content of method.
+     */
     public void testImportDataFromFile() throws Exception {
 
         System.out.println("ImportDataFromFile Test");

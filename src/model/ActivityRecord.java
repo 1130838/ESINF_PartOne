@@ -74,18 +74,13 @@ public class ActivityRecord {
     }
 
 
-    public void CreateActivitiesFromFileData(String path){
-
-        try {
+    public void CreateActivitiesFromFileData(String path) throws FileNotFoundException{
 
             ArrayList<ArrayList<String>> dataFromFile = FileImport.importDataFromFile(path);
             for (int i = 0; i < dataFromFile.size(); i++) {
                 newActivity(dataFromFile.get(i));
             }
 
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
     }
 
 

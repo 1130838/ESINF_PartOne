@@ -13,7 +13,6 @@ public abstract class Activity {
     private String description;
     private float duration;
     private TimeUnit time_unit;
-    private float cost;
     private List<String> preceding_activities;
 
     public Activity(String key, ActivityType type, String description, float duration, TimeUnit time_unit, List<String> preceding_activities) {
@@ -28,11 +27,6 @@ public abstract class Activity {
     public String getKey() {
         return key;
     }
-
-    public ActivityType getType() {
-        return type;
-    }
-
 
     public String toString(){
 
